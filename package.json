@@ -1,0 +1,27 @@
+{
+  "name": "daruma",
+  "version": "0.0.1",
+  "description": "Build tool inspired by Rust's Cargo package manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datwheat/daruma.git"
+  },
+  "keywords": [
+    "JS",
+    "babel"
+  ],
+  "author": "Juwan Wheatley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/datwheat/daruma/issues"
+  },
+  "homepage": "https://github.com/datwheat/daruma#readme",
+  "dependencies": {
+    "shelljs": "^0.7.0",
+    "vorpal": "^1.10.10"
+  }
+}
