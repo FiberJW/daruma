@@ -19,21 +19,21 @@ var darumarc = require('../configs/daruma.json');
 module.exports = function(args) {
   var newDharhma, name = args.name;
   // Initialize Project Structure
-    
+
   shell.mkdir([
     `./${name}/`,
     `./${name}/src/`,
     `./${name}/dist/`
   ]);
   shell.cd(`./${name}/`);
-  
+
   // Common Configs
-  
+
   darumarc.name = `${name}`;
   gitignore.to('./.gitignore');
   shell.exec('npm init -y');
   shell.exec('git init');
-  
+
   if (args.options.library) {
     // Library's Entry Point
     shell.touch('./src/index.js');
@@ -47,8 +47,8 @@ module.exports = function(args) {
       ) + '\n'
     ).to('./daruma.json');
 
-    shell.exec('npm install -g webpack');
-    shell.exec('npm install --save-dev babel-loader babel-core babel-preset-es2015');
+    shell.exec('npm install -g webpack', {silent:true});
+    shell.exec('npm install --save-dev babel-loader babel-core babel-preset-es2015', {silent:true});
   } else {
     newDharhma = shell.ShellString(
       JSON.stringify(
@@ -57,18 +57,17 @@ module.exports = function(args) {
         '  '
       ) + '\n'
     ).to('./daruma.json');
-    
-    shell.exec('npm install -g babel-cli');
-    shell.exec('npm install --save-dev babel-core babel-preset-es2015');
+
+    shell.exec('npm install -g babel-cli', {silent:true});
+    shell.exec('npm install --save-dev babel-core babel-preset-es2015', {silent:true});
   }
 
   console.log(`
     Project created!
     \`cd ${name}/\` to enter folder.
     Write ES2015 code in \`src/\` folder.
-    Run \`daruma build\` in root of project directory. 
+    Run \`daruma build\` in root of project directory.
     Your compiled code is in the \`dist/\` folder.
     Enjoy freedom!
   `);
 };
-
