@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  The unified JavaScript build tool.
+  The JavaScript build tool.
 </p>
 ##  Build tool inspired by Rust's Cargo package manager
 
