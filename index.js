@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Module Dependencies
 
 var daruma = require('vorpal')();

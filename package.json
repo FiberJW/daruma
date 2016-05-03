@@ -16,7 +16,7 @@
   ],
   "author": "Juwan Wheatley",
   "license": "MIT",
-  "bin": "node index.js",
+  "bin": "index.js",
   "bugs": {
     "url": "https://github.com/datwheat/daruma/issues"
   },
