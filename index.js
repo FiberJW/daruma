@@ -2,7 +2,6 @@
 // Module Dependencies
 
 var daruma = require('vorpal')();
-var shell = require('shelljs');
 
 // Actions
 var newAction = require('./actions/new');
