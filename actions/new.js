@@ -61,5 +61,14 @@ module.exports = function(args) {
     shell.exec('npm install -g babel-cli');
     shell.exec('npm install --save-dev babel-core babel-preset-es2015');
   }
+
+  console.log(`
+    Project created!
+    \`cd ${name}/\` to enter folder.
+    Write ES2015 code in \`src/\` folder.
+    Run \`daruma build\` in root of project directory. 
+    Your compiled code is in the \`dist/\` folder.
+    Enjoy freedom!
+  `);
 };
 
