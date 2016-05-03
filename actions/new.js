@@ -52,8 +52,7 @@ module.exports = function(args) {
     ${chalk.bold.blue('Installing dependencies...')}
     `);
 
-    shell.exec('npm install -g webpack', {silent:true});
-    shell.exec('npm install --save-dev babel-loader babel-core babel-preset-es2015', {silent:true});
+    shell.exec('npm install --save-dev babel-loader babel-core babel-preset-es2015 babel-preset-stage-0 eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y', {silent:true});
   } else {
     newDharhma = shell.ShellString(
       JSON.stringify(
@@ -67,8 +66,7 @@ module.exports = function(args) {
     ${chalk.bold.blue('Installing dependencies...')}
     `);
 
-    shell.exec('npm install -g babel-cli', {silent:true});
-    shell.exec('npm install --save-dev babel-core babel-preset-es2015 babel-preset-stage-0', {silent:true});
+    shell.exec('npm install --save-dev babel-core babel-preset-es2015 babel-preset-stage-0 eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y', {silent:true});
   }
 
   console.log(`

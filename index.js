@@ -10,6 +10,7 @@ var installAction = require('./actions/install');
 var uninstallAction = require('./actions/uninstall');
 var buildAction = require('./actions/build');
 var updateAction = require('./actions/update');
+var lintAction = require('./actions/lint');
 // Initialize a new project
 daruma
   .command('new <name>')
@@ -42,6 +43,12 @@ daruma
   .command('update')
   .description('update daruma to the latest build')
   .action(updateAction);
+
+// Lint project
+daruma
+  .command('lint')
+  .description('run linting tests on source files')
+  .action(lintAction);
 
 // Run CLI
 daruma.parse(process.argv);
