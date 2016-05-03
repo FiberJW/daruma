@@ -1,6 +1,6 @@
 {
   "name": "daruma",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Build tool inspired by Rust's Cargo package manager",
   "main": "index.js",
   "scripts": {
