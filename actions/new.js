@@ -31,8 +31,8 @@ module.exports = function(args) {
 
   darumarc.name = `${name}`;
   gitignore.to('./.gitignore');
-  shell.exec('npm init -y');
-  shell.exec('git init');
+  shell.exec('npm init -y', {silent:true});
+  shell.exec('git init', {silent:true});
 
   if (args.options.library) {
     // Library's Entry Point
