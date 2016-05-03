@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/datwheat/daruma#readme",
   "dependencies": {
+    "chalk": "^1.1.3",
     "shelljs": "^0.7.0",
     "vorpal": "^1.10.10"
   }

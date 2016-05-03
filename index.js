@@ -8,8 +8,8 @@ var shell = require('shelljs');
 var newAction = require('./actions/new');
 var installAction = require('./actions/install');
 var uninstallAction = require('./actions/uninstall');
-var buildAction = require('./actions/build.js');
-
+var buildAction = require('./actions/build');
+var updateAction = require('./actions/update');
 // Initialize a new project
 daruma
   .command('new <name>')
@@ -36,6 +36,12 @@ daruma
   .option('-p --production', 'Compiles minimized output file.')
   .description('Compile your source files to the `dist` directory.')
   .action(buildAction);
+
+// Update daruma
+daruma
+  .command('update')
+  .description('update daruma to the latest build')
+  .action(updateAction);
 
 // Run CLI
 daruma.parse(process.argv);

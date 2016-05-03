@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var shell = require('shelljs');
+var chalk = require('chalk');
 
 // Configurations
 
@@ -48,7 +49,7 @@ module.exports = function(args) {
     ).to('./daruma.json');
     
     console.log(`
-    Installing dependencies...
+    ${chalk.bold.blue('Installing dependencies...')}
     `);
 
     shell.exec('npm install -g webpack', {silent:true});
@@ -63,7 +64,7 @@ module.exports = function(args) {
     ).to('./daruma.json');
 
     console.log(`
-    Installing dependencies...
+    ${chalk.bold.blue('Installing dependencies...')}
     `);
 
     shell.exec('npm install -g babel-cli', {silent:true});
@@ -72,10 +73,10 @@ module.exports = function(args) {
 
   console.log(`
     Project created!
-    \`cd ${name}/\` to enter folder.
+    \`cd ${chalk.bold.red(name)}/\` to enter folder.
     Write ES2015 code in \`src/\` folder.
-    Run \`daruma build\` in root of project directory.
+    Run \`${chalk.yellow.bold('daruma')} build\` in root of project directory.
     Your compiled code will be in the \`dist/\` folder.
-    Enjoy freedom!
+    Enjoy ${chalk.bold.yellow('freedom')}!
   `);
 };
