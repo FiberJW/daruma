@@ -5,19 +5,53 @@
 <p align="center">
   The JavaScript build tool.
 </p>
-##  Build tool inspired by Rust's Cargo package manager
+<p align="center">
+  <a href='https://www.npmjs.org/package/daruma'>
+    <img src="https://img.shields.io/npm/v/daruma.svg?style=flat-square" />
+  </a>
+  <a href='http://npm-stat.com/charts.html?package=daruma'>
+    <img src="https://img.shields.io/npm/dm/daruma.svg?style=flat-square" />
+  </a>
+  <a href='./LICENSE'>
+    <img src="http://img.shields.io/:license-mit-blue.svg?style=flat-square" />
+  </a>
+</p>
 
-Install development builds: `npm install -g git://github.com/datwheat/daruma.git`
+
+
+## What is this?
+
+A tool that handles compiling all of your ES2015+ code into browser ready JavaScript.
+
+## Why do I want this?
+
+If you've ever had to start a node project or library from scratch with all of the cool features like ES2015 with babel and bundling with webpack, you know it can be a hassle. Daruma allows you to focus on what's most important: building your project.
+
+## Who is this for?
+
+Primarily for those who don't want to go through the hassle of setting up an ES2015+ project but still want to flexibility that a starter kit can't provide.
 
 ## Getting Started
 
-Install daruma globally like above ^.
+Install Daruma from npm `npm install -g daruma`
+
+### or
+
+Install development builds: `npm install -g git://github.com/datwheat/daruma.git`
+
+#### Initialize a new project
 
 `daruma new <projectname> [-l for libraries with a spefific bundled outfile]`
 
+#### Enter the Project Directory
+
 `cd <projectname>`
 
-Write ES2015+ code in your source folder. (`index.js` is the entry for libraries)
+#### Write ES2015+ code in your `src/` folder. (`index.js` is the entry for libraries)
+
+then ...
+
+#### Compile your EsNext JavaScript
 
 `daruma build [-w for watching files] [-p for production library builds]`
 
@@ -37,3 +71,5 @@ You now have valid ES5 code in your `dist/` folder! Wasn't that easy?
 - [x] Initialize as git repo
 - [x] Add a node .gitignore
 - [ ] daruma pre-build scripts
+- [ ] add colored output
+- [ ] add loaders
