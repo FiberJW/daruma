@@ -31,9 +31,9 @@ module.exports = function(args) {
     shell.rm('./webpack.config.js'); // Like we were never there :P
   } else {
     if (args.options.watch) {
-      shell.exec('babel src --out-dir dist --presets es2015 -w');
+      shell.exec('babel src --out-dir dist --presets es2015 stage-0 -w');
     } else {
-      shell.exec('babel src --out-dir dist --presets es2015');
+      shell.exec('babel src --out-dir dist --presets es2015 stage-0');
     }
   }
 };

@@ -17,7 +17,7 @@ Install daruma globally like above ^.
 
 `cd <projectname>`
 
-Write ES2015 code in your source folder. (`index.js` is the entry for libraries)
+Write ES2015+ code in your source folder. (`index.js` is the entry for libraries)
 
 `daruma build [-w for watching files] [-p for production library builds]`
 

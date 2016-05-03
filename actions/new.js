@@ -59,7 +59,7 @@ module.exports = function(args) {
     ).to('./daruma.json');
 
     shell.exec('npm install -g babel-cli', {silent:true});
-    shell.exec('npm install --save-dev babel-core babel-preset-es2015', {silent:true});
+    shell.exec('npm install --save-dev babel-core babel-preset-es2015 babel-preset-stage-0', {silent:true});
   }
 
   console.log(`
