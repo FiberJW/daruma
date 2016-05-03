@@ -71,5 +71,4 @@ You now have valid ES5 code in your `dist/` folder! Wasn't that easy?
 - [x] Initialize as git repo
 - [x] Add a node .gitignore
 - [ ] daruma pre-build scripts
-- [ ] add colored output
-- [ ] add loaders
+
