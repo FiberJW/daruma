@@ -1,7 +1,10 @@
-# Daruma
+<p align="center">
+  <img alt="daruma" src="http://i.imgur.com/w1VPnph.png" width="546"/>
+</p>
 
----
-
+<p align="center">
+  The unified JavaScript build tool.
+</p>
 ##  Build tool inspired by Rust's Cargo package manager
 
 Install development builds: `npm install -g git://github.com/datwheat/daruma.git`
