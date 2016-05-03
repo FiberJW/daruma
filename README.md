@@ -9,6 +9,20 @@
 
 Install development builds: `npm install -g git://github.com/datwheat/daruma.git`
 
+## Getting Started
+
+Install daruma globally like above ^.
+
+`daruma new <projectname> [-l for libraries with a spefific bundled outfile]`
+
+`cd <projectname>`
+
+Write ES2015 code in your source folder. (`index.js` is the entry for libraries)
+
+`daruma build [-w for watching files] [-p for production library builds]`
+
+You now have valid ES5 code in your `dist/` folder! Wasn't that easy?
+
 # Roadmap:
 
 ## Features wanted:
