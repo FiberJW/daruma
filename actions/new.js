@@ -47,7 +47,9 @@ module.exports = function(args) {
       ) + '\n'
     ).to('./daruma.json');
     
-    console.log('Installing dependencies...');
+    console.log(`
+    Installing dependencies...
+    `);
 
     shell.exec('npm install -g webpack', {silent:true});
     shell.exec('npm install --save-dev babel-loader babel-core babel-preset-es2015', {silent:true});
@@ -60,7 +62,9 @@ module.exports = function(args) {
       ) + '\n'
     ).to('./daruma.json');
 
-    console.log('Installing dependencies...');
+    console.log(`
+    Installing dependencies...
+    `);
 
     shell.exec('npm install -g babel-cli', {silent:true});
     shell.exec('npm install --save-dev babel-core babel-preset-es2015 babel-preset-stage-0', {silent:true});
