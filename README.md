@@ -68,8 +68,5 @@ You now have valid ES5 code in your `dist/` folder! Wasn't that easy?
 - [x] `daruma install <packagename(s)>` (Add package(s) from NPM and save to `package.json`)
 - [x] `daruma uninstall <packagename(s)>` (Remove dependencies from project and `package.json`)
 - [x] `daruma update` update the version of daruma on your machine
-- [ ] `daruma lint` (Lints your Files based on a eslint standard)
-- [x] Initialize as git repo
-- [x] Add a node .gitignore
 - [ ] daruma pre-build scripts
 

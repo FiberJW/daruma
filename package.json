@@ -4,7 +4,7 @@
   "description": "Build tool inspired by Rust's Cargo package manager",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm install -g webpack eslint babel-cli",
+    "postinstall": "npm install -g webpack babel-cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

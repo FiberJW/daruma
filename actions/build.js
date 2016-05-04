@@ -9,7 +9,7 @@ var checkDir = require('../helpers/checkdir');
 module.exports = function(args) {
   checkDir();
   
-  var darumarc = JSON.parse(shell.cat('./daruma.json'));
+  var darumarc = JSON.parse(shell.cat('./.daruma.json'));
 
   if (darumarc.isLibrary) {
     var webpackConfig = shell.ShellString(
