@@ -41,7 +41,7 @@ Install development builds: `npm install -g git://github.com/datwheat/daruma.git
 
 #### Initialize a new project
 
-`daruma new <projectname> [-l for libraries with a spefific bundled outfile]`
+`daruma new <projectname> [-l for libraries with a specific bundled outfile]`
 
 #### Enter the Project Directory
 
