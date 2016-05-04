@@ -1,13 +1,19 @@
 // Module Dependencies
 
-var shell = require('shelljs');
 var chalk = require('chalk');
+var createSpinner = require('../helpers/createSpinner');
+var exec = require('child_process').exec;
 
 module.exports = function() {
-  shell.exec('npm install -g daruma', {silent: true});
-  
-  console.log(`
+  var updating = createSpinner(`Updating ${chalk.yellow('daruma')}`);
+  updating.start();
+  exec('npm install -g daruma', function(err, stdout, stdin) {
+    if (err) {
+      console.error(err);
+    }  
+    updating.stop();
+    console.log(`
     ${chalk.bold.blue(`Congrats! you\'ve just updated ${chalk.yellow.bold('daruma')}`)}!
-  `);
-
+    `);
+  });
 };

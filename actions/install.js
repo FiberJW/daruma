@@ -1,18 +1,25 @@
 // Module Dependencies
 
-var shell = require('shelljs');
 var checkDir = require('../helpers/checkdir');
+var createSpinner = require('../helpers/createSpinner');
+var exec = require('child_process').exec;
+var chalk = require('chalk');
 
 module.exports = function(args) {
   var moduleNames = args.modules.join(' ');
-
+  var installing = createSpinner(`Installing ${moduleNames.split(' ').join(', ')}`);
   checkDir();
+  
+  installing.start();
+  
+  exec(`npm install --save ${moduleNames}`, function(err, stdout, stdin) {
+    if (err) {
+      console.error(err);
+    }
+    installing.stop();
 
-  console.log(`
-    Installing ${moduleNames.split(' ').join(', ')}.
-    (May seem to hang as NPM progress bar is not shown.)
-    `
-  );
-  shell.exec(`npm install --save ${moduleNames}`, {silent:true});
-  console.log('    Done!');
+    console.log(`
+    ${chalk.yellow.bold('Done!')}
+    `);
+  });
 };

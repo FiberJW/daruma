@@ -1,5 +1,5 @@
 var path = require('path');
-var libraryName = require('./daruma.json').name;
+var libraryName = require('./.daruma.json').name;
 var outputFile = libraryName + '.js';
 
 var config = {

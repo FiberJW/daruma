@@ -1,24 +1,25 @@
 // Module Dependencies
 
-var shell = require('shelljs');
-var fs = require('fs');
+var checkDir = require('../helpers/checkdir');
+var createSpinner = require('../helpers/createSpinner');
+var exec = require('child_process').exec;
+var chalk = require('chalk');
 
 module.exports = function(args) {
   var moduleNames = args.modules.join(' ');
+  var installing = createSpinner(`Uninstalling ${moduleNames.split(' ').join(', ')}`);
+  checkDir();
+  
+  uninstalling.start();
+  
+  exec(`npm uninstall --save ${moduleNames}`, function(err, stdout, stdin) {
+    if (err) {
+      console.error(err);
+    }
+    uninstalling.stop();
 
-  try {
-
-    fs.statSync('./daruma.json');
-
-  } catch (e) {
-
-    throw new Error('    Must be in the root directory of a daruma project.');
-
-  }
-  console.log(`
-    Removing ${moduleNames.split(' ').join(', ')}.
-    (May seem to hang as NPM progress bar is not shown.)
-    `
-  );
-  shell.exec(`npm uninstall --save ${moduleNames}`, {silent:true});
+    console.log(`
+    ${chalk.yellow.bold('Done!')}
+    `);
+  });
 };

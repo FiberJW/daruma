@@ -3,6 +3,7 @@
 var fs = require('fs');
 var shell = require('shelljs');
 var chalk = require('chalk');
+var exec = require('child_process').exec;
 
 // Configurations
 
@@ -15,7 +16,8 @@ var gitignore = shell.ShellString(
 );
 var darumarc = require('../configs/daruma.json');
 
-
+var createSpinner = require('../helpers/createSpinner');
+var installing = createSpinner(`Installing dependencies`);
 
 module.exports = function(args) {
   var newDharhma, name = args.name;
@@ -29,7 +31,7 @@ module.exports = function(args) {
   shell.cd(`./${name}/`);
 
   // Common Configs
-
+ 
   darumarc.name = `${name}`;
   gitignore.to('./.gitignore');
   shell.exec('npm init -y', {silent:true});
@@ -48,11 +50,18 @@ module.exports = function(args) {
       ) + '\n'
     ).to('./.daruma.json');
     
-    console.log(`
-    ${chalk.bold.blue('Installing dependencies...')}
-    `);
+    installing.start();
 
-    shell.exec('npm install --save-dev babel-loader babel-core babel-preset-es2015 babel-preset-stage-0', {silent:true});
+    // Try using child_process.exec instead
+    
+    exec('npm install --save-dev babel-loader babel-core babel-preset-es2015 babel-preset-stage-0', function(err, stdout, stdin) {
+      if (err) {
+        console.error(err);
+      }
+      installing.stop();
+      intro();  
+    });
+    
   } else {
     newDharhma = shell.ShellString(
       JSON.stringify(
@@ -62,19 +71,27 @@ module.exports = function(args) {
       ) + '\n'
     ).to('./.daruma.json');
 
-    console.log(`
-    ${chalk.bold.blue('Installing dependencies...')}
-    `);
 
-    shell.exec('npm install --save-dev babel-core babel-preset-es2015 babel-preset-stage-0', {silent:true});
+    installing.start();
+
+    exec('npm install --save-dev babel-core babel-preset-es2015 babel-preset-stage-0', function(err, stdout, stdin) {
+      if (err) {
+        console.error(err);
+      }
+      installing.stop();
+      intro();
+    });
+    
   }
-
-  console.log(`
+  
+  function intro() {
+    console.log(`
     Project created!
     \`cd ${chalk.bold.red(name)}/\` to enter folder.
     Write ES2015 code in \`src/\` folder.
     Run \`${chalk.yellow.bold('daruma')} build\` in root of project directory.
     Your compiled code will be in the \`dist/\` folder.
     Enjoy ${chalk.bold.yellow('freedom')}!
-  `);
+    `);
+  }
 };
