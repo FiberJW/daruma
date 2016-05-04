@@ -51,6 +51,10 @@ Install development builds: `npm install -g git://github.com/datwheat/daruma.git
 
 then ...
 
+#### Test your code
+
+Write tests in your `test/` directory using whatever assertion library you'd like and run `daruma test` to run tests using Mocha
+
 #### Compile your EsNext JavaScript
 
 `daruma build [-w for watching files] [-p for production library builds]`
@@ -64,7 +68,7 @@ You now have valid ES5 code in your `dist/` folder! Wasn't that easy?
 - [x] `daruma new <projectname> --lib` (Project Initialization for Library with single entry point)
 - [x] `daruma new <projectname>`  (Project initialization for compiling whole source)
 - [x] `daruma build [-p -w for libs]` (Compile project depending on project type. Bundled file to `dist/` for lib and compile whole `src/` tree to `dist/` for normal projects. `-p` is for compiling minimized 'production' code and `-w` watches for changes)
-- [ ] `daruma test` (First class testing)
+- [x] `daruma test` (First class testing)
 - [x] `daruma install <packagename(s)>` (Add package(s) from NPM and save to `package.json`)
 - [x] `daruma uninstall <packagename(s)>` (Remove dependencies from project and `package.json`)
 - [x] `daruma update` update the version of daruma on your machine

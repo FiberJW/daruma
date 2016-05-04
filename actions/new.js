@@ -26,7 +26,8 @@ module.exports = function(args) {
   shell.mkdir([
     `./${name}/`,
     `./${name}/src/`,
-    `./${name}/dist/`
+    `./${name}/dist/`,
+    `./${name}/test/`
   ]);
   shell.cd(`./${name}/`);
 

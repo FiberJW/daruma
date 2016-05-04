@@ -9,6 +9,7 @@ var installAction = require('./actions/install');
 var uninstallAction = require('./actions/uninstall');
 var buildAction = require('./actions/build');
 var updateAction = require('./actions/update');
+var testAction = require('./actions/test');
 
 // Initialize a new project
 daruma
@@ -40,8 +41,14 @@ daruma
 // Update daruma
 daruma
   .command('update')
-  .description('update daruma to the latest build')
+  .description('Update daruma to the latest build.')
   .action(updateAction);
+
+// Run tests
+daruma
+  .command('test')
+  .description('Runs tests within \`tests/\` directory.')
+  .action(testAction);
 
 // Run CLI
 daruma.parse(process.argv);
