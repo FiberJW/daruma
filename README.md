@@ -21,7 +21,7 @@
 
 ## What is this?
 
-A tool that handles compiling all of your ES2015+ code into browser ready JavaScript.
+A tool that gets you up and running writing ES2015+ JavaScript with no fuss.
 
 ## Why do I want this?
 
@@ -34,10 +34,6 @@ Primarily for those who don't want to go through the hassle of setting up an ES2
 ## Getting Started
 
 Install Daruma from npm `npm install -g daruma`
-
-### or
-
-Install development builds: `npm install -g git://github.com/datwheat/daruma.git`
 
 #### Initialize a new project
 
@@ -61,12 +57,25 @@ Write tests in your `test/` directory using whatever assertion library you'd lik
 
 You now have valid ES5 code in your `dist/` folder! Wasn't that easy?
 
+### Daruma leverages the power of...
+
+- npm
+- Babel
+- Webpack
+- Shelljs
+- Mocha
+- Vorpal
+
+...to give you a clean and easy development experience.
+
+This wouldn't be possible without those projects, so thank you JavaScript ecosystem. :)
 # Roadmap:
 
 ## Features wanted:
 
-- [x] `daruma new <projectname> --lib` (Project Initialization for Library with single entry point)
+- [x] `daruma new <projectname> -l` (Project Initialization for Library with single entry point)
 - [x] `daruma new <projectname>`  (Project initialization for compiling whole source)
+- [ ] `daruma init [-l]` (Transform a directory for use with daruma) 
 - [x] `daruma build [-p -w for libs]` (Compile project depending on project type. Bundled file to `dist/` for lib and compile whole `src/` tree to `dist/` for normal projects. `-p` is for compiling minimized 'production' code and `-w` watches for changes)
 - [x] `daruma test` (First class testing)
 - [x] `daruma install <packagename(s)>` (Add package(s) from NPM and save to `package.json`)
