@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 var _vorpal = require('vorpal');
@@ -33,6 +34,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var daruma = (0, _vorpal2.default)();
 
 // Actions
+
 // Module Dependencies
 
 // Initialize a new project

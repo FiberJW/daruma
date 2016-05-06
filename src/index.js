@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Module Dependencies
 
 import vorpal from 'vorpal';
