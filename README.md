@@ -27,6 +27,8 @@ A tool that gets you up and running writing ES2015+ JavaScript with no fuss.
 
 If you've ever had to start a node project or library from scratch with all of the cool features like ES2015 with babel and bundling with webpack, you know it can be a hassle. Daruma allows you to focus on what's most important: building your project.
 
+Even Daruma was written using Daruma. :smirk:
+
 ## Who is this for?
 
 Primarily for those who don't want to go through the hassle of setting up an ES2015+ project but still want to flexibility that a starter kit can't provide.
