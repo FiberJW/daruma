@@ -2,7 +2,6 @@ import { exec } from 'shelljs';
 import createSpinner from './createSpinner';
 import chalk from 'chalk';
 
-
 const globalDeps = ['webpack', 'babel-cli', 'mocha'];
 const notInstalled = [];
 

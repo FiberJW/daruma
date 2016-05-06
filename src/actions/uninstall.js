@@ -15,12 +15,13 @@ export default (args) => {
 
   exec(`npm uninstall --save ${moduleNames}`, (err) => {
     if (err) {
+      uninstalling.stop();
       console.error(err);
+    } else {
+      uninstalling.stop();
+      console.log(`
+        ${chalk.yellow.bold('Done!')}
+      `);
     }
-    uninstalling.stop();
-
-    console.log(`
-    ${chalk.yellow.bold('Done!')}
-    `);
   });
 };

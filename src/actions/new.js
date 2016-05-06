@@ -2,9 +2,9 @@
 import shell from 'shelljs';
 import chalk from 'chalk';
 import { exec } from 'child_process';
-import darumarc from '../configs/daruma.json';
+import darumarc from '../configs/daruma';
 import createSpinner from '../helpers/createSpinner';
-const { ShellsString: sString } = shell;
+const sString = shell.ShellString;
 import { content as gitignoreCfg } from '../configs/gitignore';
 
 // Configurations

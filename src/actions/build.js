@@ -1,8 +1,8 @@
 // Module Dependencies
 import shell from 'shelljs';
-const { ShellString: sString } = shell;
+const sString = shell.ShellString;
 import checkDir from '../helpers/checkdir';
-import { content as webpackConfig } from '../configs/webpack.config';
+import webpackConfig from '../configs/webpack.config';
 
 // Configs
 export default (args) => {
@@ -11,7 +11,7 @@ export default (args) => {
 
   if (darumarc.isLibrary) {
     sString(
-      webpackConfig
+      webpackConfig.content
     ).to('./webpack.config.js');
 
     if (args.options.watch && args.options.production) {

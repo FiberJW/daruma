@@ -15,12 +15,13 @@ export default (args) => {
 
   exec(`npm install --save ${moduleNames}`, (err) => {
     if (err) {
+      installing.stop();
       console.error(err);
+    } else {
+      installing.stop();
+      console.log(`
+        ${chalk.yellow.bold('Done!')}
+      `);
     }
-    installing.stop();
-
-    console.log(`
-    ${chalk.yellow.bold('Done!')}
-    `);
   });
 };
