@@ -1,5 +1,7 @@
-module.exports = function() {
-  var fs = require('fs');
+// Module Dependencies
+import fs from 'fs';
+
+export default () => {
   try {
     fs.statSync('./.daruma.json');
   } catch (e) {

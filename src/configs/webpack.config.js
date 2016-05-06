@@ -1,4 +1,6 @@
-var path = require('path');
+export default {
+  content:
+`var path = require('path');
 var libraryName = require('./.daruma.json').name;
 var outputFile = libraryName + '.js';
 
@@ -18,14 +20,19 @@ var config = {
         query: {
           presets: ['es2015', 'stage-0']
         }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },
   resolve: {
     root: path.resolve('./src'),
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.json']
   }
 };
 
 module.exports = config;
-
+`,
+};

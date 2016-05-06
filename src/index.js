@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 // Module Dependencies
 
-var daruma = require('vorpal')();
+import vorpal from 'vorpal';
+
+const daruma = vorpal();
 
 // Actions
-var newAction = require('./actions/new');
-var installAction = require('./actions/install');
-var uninstallAction = require('./actions/uninstall');
-var buildAction = require('./actions/build');
-var updateAction = require('./actions/update');
-var testAction = require('./actions/test');
+import newAction from './actions/new';
+import installAction from './actions/install';
+import uninstallAction from './actions/uninstall';
+import buildAction from './actions/build';
+import updateAction from './actions/update';
+import testAction from './actions/test';
 
 // Initialize a new project
 daruma

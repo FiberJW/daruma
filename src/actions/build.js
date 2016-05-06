@@ -1,18 +1,17 @@
 // Module Dependencies
-
-var shell = require('shelljs');
-var sString = shell.ShellString;
-var checkDir = require('../helpers/checkdir');
+import shell from 'shelljs';
+const sString = shell.ShellString;
+import checkDir from '../helpers/checkdir';
+import webpackConfig from '../configs/webpack.config';
 
 // Configs
-
-module.exports = function(args) {
+export default (args) => {
   checkDir();
-  var darumarc = JSON.parse(shell.cat('./.daruma.json'));
+  const darumarc = JSON.parse(shell.cat('./.daruma.json'));
 
   if (darumarc.isLibrary) {
     sString(
-      require('../configs/webpack.config.txt')
+      webpackConfig.content
     ).to('./webpack.config.js');
 
     if (args.options.watch && args.options.production) {
