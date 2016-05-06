@@ -47,7 +47,7 @@ daruma
 // Run tests
 daruma
   .command('test')
-  .description('Runs tests within \`tests/\` directory.')
+  .description('Runs tests within `tests/` directory.')
   .action(testAction);
 
 // Run CLI
