@@ -7,7 +7,7 @@ export default () => {
   const updating = createSpinner(`Updating ${chalk.yellow('daruma')}`);
   updating.start();
 
-  exec('npm install -g daruma', (err) => {
+  exec('npm uninstall -g daruma && npm install -g daruma', (err) => {
     if (err) {
       console.error(err);
     }

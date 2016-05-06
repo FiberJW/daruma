@@ -20,7 +20,7 @@ exports.default = function () {
   var updating = (0, _createSpinner2.default)('Updating ' + _chalk2.default.yellow('daruma'));
   updating.start();
 
-  (0, _child_process.exec)('npm install -g daruma', function (err) {
+  (0, _child_process.exec)('npm uninstall -g daruma && npm install -g daruma', function (err) {
     if (err) {
       console.error(err);
     }
