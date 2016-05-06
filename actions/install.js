@@ -7,12 +7,14 @@ var chalk = require('chalk');
 
 module.exports = function(args) {
   var moduleNames = args.modules.join(' ');
-  var installing = createSpinner(`Installing ${moduleNames.split(' ').join(', ')}`);
+  var installing = createSpinner(
+    `Installing ${moduleNames.split(' ').join(', ')}`
+  );
   checkDir();
-  
+
   installing.start();
-  
-  exec(`npm install --save ${moduleNames}`, function(err, stdout, stdin) {
+
+  exec(`npm install --save ${moduleNames}`, function(err) {
     if (err) {
       console.error(err);
     }
