@@ -4,7 +4,7 @@
   "description": "Build tool inspired by Rust's Cargo package manager",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node dist/postinstall.js",
+    "postinstall": "node dist/helpers/postinstall.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
